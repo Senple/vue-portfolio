@@ -1,56 +1,31 @@
-// P.178 動的コンポーネントの基本 
-Vue.component('banner-member', {
-    template: '<div class="banner"> \
-    <h3>WINGSメンバー募集中</h3> \
-    <p>あなたもWINGSプロジェクトに参加しませんか？<br /> \
-    現在、WINGSプロジェクでは、ご一緒にお仕事ができる仲間を募集中です。</p> \
-    </div>'
-});
-
-Vue.component('banner-new', {
-    template: `<div class="banner">
-      <h3>新刊「HTML5超入門 」発売</h3>
-      <p>ステップバイステップで学ぶ入門書です。<br />
-        HTML5アプリの基礎知識、画面のデザイン、コードの書き方などが理解できます。</p>
-    </div>`
-});
-
-Vue.component('banner-env', {
-    template: `<div class="banner">
-      <h3>環境構築設定</h3>
-      <p>開発環境の設定方法を図を交えて詳しく解説します。<br />
-        紹介している各モジュールは、日々頻繁にバージョンアップが行われています。</p>
-    </div>`
-});
-
 // P.181 タブパネルを生成する。
-Vue.component('tab-member', {
+Vue.component('tab-scout', {
     template: `<div class="tab">
-      <p>あなたもWINGSプロジェクトに参加しませんか？<br />
-        現在、WINGSプロジェクトでは、ご一緒にお仕事ができる仲間を募集中です。</p>
+      <p>Scout<br />
+      カブスカウトからローバー卒業までスカウティングで養成された</p>
       <label>名前：<input type="text" v-model="name" /></label>
       <input type="submit" value="登録" />
+    </div>`,
+});
+
+Vue.component('tab-skills', {
+    template: `<div class="tab">
+      <h3>エンジニアリング</h3>
+      <p>2018年から、Pythonを書いています。<br />
+        スタートアップへ就職してからは、vue.jsとAWSなどPython以外もさわり始めています。</p>
+    </div>`
+});
+
+Vue.component('tab-reading', {
+    template: `<div class="tab">
+      <p>最近は、様々な書籍を読んでいます。<br />
+      苦しかったときの話をしようか。森岡剛</p>
     </div>`,
     data: function () {
         return {
             name: ''
         }
     }
-});
-
-Vue.component('tab-new', {
-    template: `<div class="tab">
-      <h3>「HTML5超入門 」発売！</h3>
-      <p>ステップバイステップで学ぶ入門書です。<br />
-        HTML5アプリの基礎知識、画面のデザイン、コードの書き方などが理解できます。</p>
-    </div>`
-});
-
-Vue.component('tab-env', {
-    template: `<div class="tab">
-      <p>開発環境の設定方法を図を交えて詳しく解説します。<br />
-        紹介している各モジュールは、日々頻繁にバージョンアップが行われています。</p>
-    </div>`
 });
 
 new Vue({
@@ -73,12 +48,12 @@ new Vue({
     },
     data: {
         // 表示中のタブ
-        current: 'member',
+        current: 'scout',
         // 表示するタブのリスト
         tabs: {
-            'member': 'メンバー紹介',
-            'new': '新刊紹介',
-            'env': '環境構築設定'
+            'scout': 'スカウト活動',
+            'skills': '技術探究',
+            'reading': '趣味：読書'
         }
     }
 });
