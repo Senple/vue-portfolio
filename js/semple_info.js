@@ -1,17 +1,15 @@
 // P.181 タブパネルを生成する。
 Vue.component('tab-scout', {
-    template: `<div class="tab">
-      <p>Scout<br />
+    template: `<div class="tab"> \
+      <p>Scout<br /> \
       カブスカウトからローバー卒業までスカウティングで養成された</p>
-      <label>名前：<input type="text" v-model="name" /></label>
-      <input type="submit" value="登録" />
-    </div>`,
+      </div>`,
 });
 
 Vue.component('tab-skills', {
-    template: `<div class="tab">
-      <h3>エンジニアリング</h3>
-      <p>2018年から、Pythonを書いています。<br />
+    template: `<div class="tab"> \
+      <h3>エンジニアリング</h3> \
+      <p>2018年から、Pythonを書いています。<br /> \
         スタートアップへ就職してからは、vue.jsとAWSなどPython以外もさわり始めています。</p>
     </div>`
 });
@@ -20,7 +18,9 @@ Vue.component('tab-reading', {
     template: `<div class="tab">
       <p>最近は、様々な書籍を読んでいます。<br />
       苦しかったときの話をしようか。森岡剛</p>
-    </div>`,
+      <label>名前：<input type="text" v-model="name" /></label>
+      <input type="submit" value="登録" />
+      </div>`,
     data: function () {
         return {
             name: ''
