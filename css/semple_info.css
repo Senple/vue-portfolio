@@ -36,9 +36,6 @@ body{
   } */
   
 
-  input[name="planChangeFlag"]:checked ~ span.setPrice {
-    font-weight:bold;
-    }
 .note_wrap{
   background: #fff;
   padding: 1em 2em;
