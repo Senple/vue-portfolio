@@ -1,7 +1,7 @@
 // P.181 タブパネルを生成する。
 Vue.component('tab-scout', {
     template: `<div class="tab"> \
-      カブスカウトからローバー卒業までスカウティングで養成された</p>
+      カブスカウトからローバースカウトまで大体10年以上の経験があります</p>
       </div>`,
 });
 
@@ -11,18 +11,15 @@ Vue.component('tab-skills', {
         スタートアップへ就職してからは、vue.jsとAWSなどPython以外もさわり始めています。</p>
     </div>`
 });
-// v-bind:name="country.name",
-// v-bind:date="country.date",
-// v-bind:purpose="country.purpose",
-// v-bind:companion="country.companion">
+
 Vue.component('tab-travel', {
     template: `<div class="tab">
     <h3>今までの旅行先</h3>
     <div v-for="country in countries">
-    <p>{{ country.name }}</p>
-    <p>{{ country.date }}</p>
-    <p>{{ country.purpose }}</p>
-    <p>{{ country.companion }}</p>
+    Abroad: {{ country.name }} <br />
+    Date: {{ country.date }} <br />
+    Purpose: {{ country.purpose }} <br />
+    {{ country.companion }}
     <hr>
     </div>
     </div>`,
@@ -90,7 +87,7 @@ new Vue({
         // 表示するタブのリスト
         tabs: {
             'scout': 'Scout',
-            'skills': 'Engineer',
+            'skills': 'Skills',
             'travel': 'Travel'
         },
 
