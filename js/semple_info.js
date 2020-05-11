@@ -1,11 +1,41 @@
 // P.181 タブパネルを生成する。
-Vue.component('tab-scout', {
+Vue.component('tab-about', {
     template: `<div class="tab"> \
-      カブスカウトからローバースカウトまで大体10年以上の経験があります</p>
+      人生は喜劇だ。</p>
+      <h3>今までの軌跡</h3>
+      <div v-for="topic in history">
+      Title: {{ topic.title }} <br />
+      Date: {{ topic.date }} <br />
+      Type: {{ topic.type }} <br />
+      Note:{{ topic.remarks }}
+      <hr>
+      </div>
       </div>`,
+    data: function () {
+        return {
+            history: [
+                {
+                    "type": "scout",
+                    "date": "2016",
+                    "title": "第3回CJKプロジェクト・バングラデシュ派遣",
+                    "remarks": "初めての海外ボランティア"
+                }, {
+                    "type": "scout",
+                    "date": "2018",
+                    "title": "第9回アジア太平洋地域スカウトユースフォーラム",
+                    "remarks": "初めての国際会議"
+                }, {
+                    "type": "Academic",
+                    "date": "2019",
+                    "title": "SPIN2019",
+                    "remarks": "初めての国際学会"
+                }
+            ]
+        }
+    }
 });
 
-Vue.component('tab-skills', {
+Vue.component('tab-skill', {
     template: `<div class="tab"> \
       <p>2018年から、Pythonを書いています。<br /> 
         スタートアップへ就職してからは、vue.jsとAWSなどPython以外もさわり始めています。</p>
@@ -57,8 +87,7 @@ Vue.component('tab-travel', {
                     "purpose": "Sight Seeing",
                     "companion": "Alone"
                 }
-            ],
-            name: ''
+            ]
         }
     }
 });
@@ -83,11 +112,11 @@ new Vue({
     },
     data: {
         // 表示中のタブ
-        current: 'scout',
+        current: 'about',
         // 表示するタブのリスト
         tabs: {
-            'scout': 'Scout',
-            'skills': 'Skills',
+            'about': "About",
+            'skill': 'Skill',
             'travel': 'Travel'
         },
 
