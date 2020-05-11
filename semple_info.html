@@ -5,12 +5,19 @@
     <meta charset="UTF-8" />
     <title>Vue.js</title>
     <link rel="stylesheet" href="css/semple_info.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <!-- google fontsの日本語版参照元　https://web-bruno.com/google-japanese-font/ -->
+    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
+
+
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="note_wrap">
         <!-- P.181 タブパネルを生成する。 -->
-        <div id="container">
+        <div id="container" class="note">
             <!-- タブを列挙 -->
             <ul>
                 <li v-for="tab in tabNames">
@@ -23,8 +30,25 @@
             </keep-alive>
         </div>
     </div>
+    <label>
+        <input type="radio" onclick="planChange();" value="S" name="planChangeFlag">
+        バリュープラン：<span class="ml5">1ユーザーあたり月額 </span><span class="setPrice">￥0</span></label>
+    <label>
+        <input type="radio" onclick="planChange();" value="M" name="planChangeFlag">
+        スタンダードプラン：<span class="ml5">1ユーザーあたり月額 </span><span class="setPrice">￥200</span></label>
+    <label>
+        <input type="radio" onclick="planChange();" value="L" name="planChangeFlag">
+        プラチナプラン：<span class="ml5">1ユーザーあたり月額 </span><span class="setPrice">￥500</span></label>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="js/semple_info.js"></script>
 </body>
 
 </html>
+
+<!-- <div class="note_wrap">
+    <div class="note">
+    <p>拝啓　時下ますますご清栄がどうたらこうたら・・・</p>
+    <p>平素は格別のうんちゃらかんちゃら申し上げます。というわけで、ごきげんよう。</p>
+    <p align="right">敬具</p>
+    </div>
+  </div> -->

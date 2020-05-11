@@ -1,7 +1,7 @@
-#container {
-    width: 450px;
-  }
-  
+body{
+  background: #C2E5FC; 
+}
+
   #container > ul {
     margin: 0px;
     padding: 0px;
@@ -11,7 +11,7 @@
     list-style-type: none;
     float: left;
     line-height: 160%;
-    width: 150px;
+    width: 25%;
     height: 40px;
   }
   
@@ -24,11 +24,46 @@
     color: #000;
     border: solid 1px Black;
   }
-  
+  /*
+ #container {
+  width: 450px;
+}
   #container > div {
     border: 1px solid #c0c0c0;
     background-color: #fcfbf4;
     border-top: none;
     padding: 15px;
-  }
+  } */
   
+
+  input[name="planChangeFlag"]:checked ~ span.setPrice {
+    font-weight:bold;
+    }
+.note_wrap{
+  background: #fff;
+  padding: 1em 2em;
+  width: 80%;
+  margin: 30px auto;
+  box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.7);
+}
+.note{
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0) 97%,
+      #ddd 97%,
+      #ddd 100%
+    );
+  background-size:100% 2em;
+  line-height:2;
+  margin-bottom:2em;
+}
+
+.sender{
+  text-align: right
+}
+
+.wf-hannari { font-family: "Hannari"; }
+.wf-nikukyu { font-family: "Nikukyu"; }
+.wf-nicomoji { font-family: "Nico Moji"; }

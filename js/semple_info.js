@@ -1,4 +1,4 @@
-// P.181 タブパネルを生成する。
+// 背景を便箋っぽく変更する。
 Vue.component('tab-about', {
     template: `<div class="tab"> \
       人生は喜劇だ。</p>
@@ -92,6 +92,56 @@ Vue.component('tab-travel', {
     }
 });
 
+
+Vue.component('tab-contact', {
+    template: `<div class="tab" id="contact"> \
+    <h2> Dear Semple </h2>
+    <div class="contents">
+    </div>
+    <div class="sender">
+    Best regardly <br />
+    <span v-text="name" id="yourname"></span><br />
+    <input type="text" max-font="8" placeholder="あなたのお名前" v-model="name"/> 
+    </div>
+    <div class="font">
+    <button type="button" name="font1" class="wf-hannari" @click=onclick1() value="0">しっかり</button>
+    <button type="button" name="font2" class="wf-nikukyu" @click=onclick2() value="1" >にゃーん</button>
+    <button type="button" name="font3" class="wf-nicomoji" @click=onclick3() value="2">やわらかい</button>
+    </div>
+    </div>`,
+    data: function () {
+        return {
+            name: ""
+        }
+    },
+    methods: {
+        onclick1: function () {
+            // var a = document.getElementById("contact");
+            var a = document.getElementById("yourname");
+            a.className = "";
+            a.className = "wf-hannari";
+            console.log(a);
+        },
+        onclick2: function () {
+            // var a = document.getElementById("contact");
+            var a = document.getElementById("yourname");
+            a.className = "";
+            a.className = "wf-nikukyu";
+            console.log(a);
+
+        },
+        onclick3: function () {
+            // var a = document.getElementById("contact");
+            var a = document.getElementById("yourname");
+            a.className = "";
+            a.className = "wf-nicomoji";
+            console.log(a);
+
+        }
+
+    }
+});
+
 new Vue({
     el: "#app",
     methods: {
@@ -117,7 +167,8 @@ new Vue({
         tabs: {
             'about': "About",
             'skill': 'Skill',
-            'travel': 'Travel'
+            'travel': 'Travel',
+            'contact': "Contact"
         },
 
     }
