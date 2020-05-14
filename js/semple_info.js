@@ -37,9 +37,33 @@ Vue.component('tab-about', {
 
 Vue.component('tab-skill', {
     template: `<div class="tab"> \
-      <p>2018年から、Pythonを書いています。<br /> 
-        スタートアップへ就職してからは、vue.jsとAWSなどPython以外もさわり始めています。</p>
-    </div>`
+      <p>2018年から、<span v-highlight:border="pythonColor">Python</span>を書いています。<br /> 
+        スタートアップへ就職してからは、
+        <span v-highlight:border="vueColor">vue.js</span>と
+        <span v-highlight:border="awsColor">AWS</span>など
+        <span v-highlight:border="pythonColor">Python</span>以外もさわり始めています。</p>
+    </div>`,
+    data: function () {
+        return {
+            vueColor: "rgba(78, 192, 141, 1)",
+            awsColor: "rgba(248, 153, 29, 1)",
+            pythonColor: "rgba(62, 124, 173, 1)"
+
+        }
+    }
+});
+
+Vue.directive('highlight', {
+    bind: function (el, binding) {
+        // mouse enter時のイベント処理を定義
+        el.addEventListener('mouseenter', function () {
+            this.style.backgroundColor = binding.value;
+        }, false);
+        // mouse leave時のイベント処理を定義
+        el.addEventListener('mouseleave', function () {
+            this.style.backgroundColor = null;
+        }, false);
+    }
 });
 
 Vue.component('tab-travel', {
