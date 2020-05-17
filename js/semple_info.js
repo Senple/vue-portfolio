@@ -1,7 +1,7 @@
 // 背景を便箋っぽく変更する。
 Vue.component('tab-about', {
     template: `<div class="tab"> \
-      人生は喜劇だ。</p>
+      <p>人生は喜劇だ。</p>
       <h3>今までの軌跡</h3>
       <div v-for="topic in history">
       Title: {{ topic.title }} <br />
